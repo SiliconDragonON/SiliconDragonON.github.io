@@ -4,9 +4,9 @@
 
 # Site
 title: wenyangblog
-subtitle: ''
-description: 'Personal blog of SiliconDragonON'
-keywords:
+subtitle: '记录学习、技术与生活'
+description: 'wenyangblog 是 SiliconDragonON 的个人知识博客，记录单片机、C 语言、Hexo 建站和技术学习笔记。'
+keywords: Hexo, Butterfly, 51MCU, 单片机, C语言, 技术博客, wenyangblog
 author: SiliconDragonON
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -105,3 +105,20 @@ deploy:
   type: git
   repo: https://github.com/SiliconDragonON/SiliconDragonON.github.io.git
   branch: main
+
+# Local search data for Butterfly.
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
+# Sitemap for search engines.
+sitemap:
+  path: sitemap.xml
+
+# RSS feed.
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20

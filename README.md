@@ -39,6 +39,9 @@ _config.yml                 Hexo 主配置文件
 _config.butterfly.yml       Butterfly 主题配置文件
 package.json                项目依赖配置
 run-hexo.cmd                Windows 下运行 Hexo 的辅助脚本
+new-post.cmd                双击/命令行创建新文章
+preview-blog.cmd            本地预览脚本
+push-and-deploy.cmd         自动提交源码并部署网站
 ```
 
 ## 本地预览网站
@@ -73,6 +76,13 @@ server     启动本地预览服务
 ```powershell
 cd F:\website
 .\run-hexo.cmd new "文章标题"
+```
+
+也可以使用项目提供的快捷脚本：
+
+```powershell
+cd F:\website
+.\new-post.cmd "文章标题"
 ```
 
 创建后，文章会出现在：
@@ -191,6 +201,22 @@ git push origin source
 2. 把生成后的网页发布到 GitHub 的 main 分支
 ```
 
+如果想一键完成提交和部署，可以执行：
+
+```powershell
+cd F:\website
+.\push-and-deploy.cmd
+```
+
+这个脚本会自动执行：
+
+```text
+1. clean + generate，先确认网站能正常生成
+2. git add / commit / push，把源码推送到 source 分支
+3. hexo deploy，把静态网页推送到 main 分支
+4. 如果 deploy 网络失败，会尝试直接推送 .deploy_git 到 main 分支
+```
+
 ## 修改网站界面
 
 网站界面主要由 Butterfly 主题配置控制，优先修改：
@@ -240,6 +266,7 @@ menu:
   Archives: /archives/ || fas fa-archive
   Tags: /tags/ || fas fa-tags
   Categories: /categories/ || fas fa-folder-open
+  Contact: /contact/ || fas fa-address-book
   About: /about/ || fas fa-user
 ```
 
@@ -248,7 +275,16 @@ menu:
 ```yaml
 social:
   fab fa-github: https://github.com/SiliconDragonON || GitHub || '#24292e'
+  fas fa-envelope: mailto:3011223675@qq.com || QQ Mail || '#12b7f5'
 ```
+
+联系页面位于：
+
+```text
+source/contact/index.md
+```
+
+联系方式可以在这个文件中修改，也可以同步修改 `_config.butterfly.yml` 中的 `social` 配置。
 
 如果要修改网站标题、作者、网站地址，修改：
 
@@ -285,6 +321,78 @@ C:\Users\Administrator\Pictures\xxx.png
 ```
 
 这种路径只能在本机看到，发布到 GitHub Pages 后别人无法访问。
+
+## 为不同分类设置不同图片
+
+分类和标签封面图在 `_config.butterfly.yml` 中配置。
+
+默认分类页封面：
+
+```yaml
+category_img: /img/covers/blog.jpg
+```
+
+为不同分类设置不同封面：
+
+```yaml
+category_per_img:
+  - 博客: /img/covers/blog.jpg
+  - 技术: /img/covers/technology.jpg
+  - 单片机: /img/covers/mcu.jpg
+  - 编程: /img/covers/code.jpg
+  - 笔记: /img/covers/notes.jpg
+```
+
+标签页封面：
+
+```yaml
+tag_per_img:
+  - 51MCU: /img/covers/mcu.jpg
+  - 单片机: /img/covers/mcu.jpg
+  - C: /img/covers/code.jpg
+  - Hexo: /img/covers/technology.jpg
+  - Blog: /img/covers/blog.jpg
+```
+
+图片文件放在：
+
+```text
+source/img/covers/
+```
+
+新增分类后，如果想使用单独封面，只需要：
+
+```text
+1. 把图片放入 source/img/covers/
+2. 在 category_per_img 中增加一行分类映射
+3. clean + generate + deploy
+```
+
+## 搜索、订阅和站点地图
+
+当前已经启用：
+
+```text
+本地搜索：/search.xml
+RSS 订阅：/atom.xml
+站点地图：/sitemap.xml
+```
+
+相关依赖在 `package.json` 中：
+
+```text
+hexo-generator-search
+hexo-generator-feed
+hexo-generator-sitemap
+```
+
+Butterfly 搜索入口在 `_config.butterfly.yml` 中：
+
+```yaml
+search:
+  use: local_search
+  placeholder: 搜索文章、标签或关键词
+```
 
 ## 双击 cmd 闪退的原因
 
