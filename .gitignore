@@ -9,3 +9,4 @@ _multiconfig.yml
 .tools/
 node-*.zip
 node-*.msi
+imgs/
