@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://silicondragonon.github.io/2026/05/31/arduino_uno_ir_servo_switch_notes/</loc>
+    
+    <lastmod>2026-06-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://silicondragonon.github.io/contact/index.html</loc>
     
     <lastmod>2026-05-31</lastmod>
@@ -58,7 +67,7 @@
 
   <url>
     <loc>https://silicondragonon.github.io/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,35 +75,49 @@
   
   <url>
     <loc>https://silicondragonon.github.io/tags/Hexo/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://silicondragonon.github.io/tags/Blog/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://silicondragonon.github.io/tags/51MCU/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://silicondragonon.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://silicondragonon.github.io/tags/C/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silicondragonon.github.io/tags/Arduino/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silicondragonon.github.io/tags/vibe-coding/</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -103,7 +126,7 @@
   
   <url>
     <loc>https://silicondragonon.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
